@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="994e9928-a248-4192-b030-2ed9f5469a18" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/analysis_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clean_data/.keepgit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dirty_data/.keepgit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/.keepgit" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +182,7 @@
       <updated>1682252805224</updated>
       <workItem from="1682252806859" duration="18597000" />
       <workItem from="1682341180250" duration="36377000" />
-      <workItem from="1682437710132" duration="8344000" />
+      <workItem from="1682437710132" duration="8688000" />
     </task>
     <servers />
   </component>
