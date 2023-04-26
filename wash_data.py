@@ -101,8 +101,8 @@ def wash_train_hdemg_data(time_window):
     #该数据lr=1e-4跑批合适
     start, end = time_window
     clean_data = []
-    for j in range(1, 6):
-        file = f'./dirty_data/data/S0{j}/hdEMG.mat'
+    for j in range(1, 20):
+        file = f'./dirty_data/data/S{j:02d}/hdEMG.mat'
         print(f"LOADING FILE {file}")
         data = sio.loadmat(file)#3组6次10s 1s采样 300
         x = data['x']#(108000, 65)
@@ -114,7 +114,7 @@ def wash_train_hdemg_data(time_window):
             #split_x = x[start_step:end_step, :]
             split_y = y[start_step:end_step, :]
             row = []
-            for i in range(0, 25): row.append(x[start_step + i:end_step + i, :])
+            for i in range(0, 20): row.append(x[start_step + i:end_step + i, :])
             split_x = np.concatenate(row, axis=1)
             row.clear()
             new_x = np.c_[split_x, split_y]
@@ -129,8 +129,8 @@ def wash_test_hdemg_data(time_window):
     #该数据lr=1e-4跑批合适
     start, end = time_window
     clean_data = []
-    for j in range(6, 7):
-        file = f'./dirty_data/data/S0{j}/hdEMG.mat'
+    for j in range(20, 21):
+        file = f'./dirty_data/data/S{j:02d}/hdEMG.mat'
         print(f"LOADING FILE {file}")
         data = sio.loadmat(file)
         x = data['x']#(108000, 65)
@@ -141,7 +141,7 @@ def wash_test_hdemg_data(time_window):
             # split_x = x[start_step:end_step, :]
             split_y = y[start_step:end_step, :]
             row = []
-            for i in range(0, 25): row.append(x[start_step + i:end_step + i, :])
+            for i in range(0, 20): row.append(x[start_step + i:end_step + i, :])
             split_x = np.concatenate(row, axis=1)
             new_x = np.c_[split_x, split_y]
             clean_data.append(new_x)
@@ -179,9 +179,36 @@ def wash_test_hdemg_data_by_gesture(time_window):
                 clean_data = []
                 sio.savemat(f'clean_data/G{gesture:02d}.mat', {'data': train_data})  # Saving .mat File of MYO
 
+
+def wash_tsne_hdemg_data(time_window):
+    #该数据lr=1e-4跑批合适
+    start, end = time_window
+    clean_data = []
+    for j in range(20, 21):
+        file = f'./dirty_data/data/S{j:02d}/hdEMG.mat'
+        print(f"LOADING FILE {file}")
+        data = sio.loadmat(file)#3组6次10s 1s采样 300
+        x = data['x']#(108000, 65)
+        y = data['y_static'].reshape(-1,1)- 1#(1, 108000)
+        for t in range(0,108000,500):  #216=3组6次12个
+            start_step = t+int((500/10)*start)
+            end_step = t+int((500/10)*end)
+            #print(start_step,end_step)
+            split_x = x[start_step:end_step, :]
+            split_y = y[start_step:end_step, :]
+            new_x = np.c_[split_x, split_y]
+            clean_data.append(new_x)
+        #print(np.max(x),np.min(x),np.mean(x),np.std(x))
+        #clean_data.append(np.c_[x, y])
+    train_data = np.concatenate(clean_data)
+    sio.savemat('clean_data/tsne.mat', {'data': train_data})  # Saving .mat File of MYO
+
 if __name__ == '__main__':
     # train_data((1.5, 8.5))
 
-    wash_train_hdemg_data((2.5, 7.5))
-    wash_test_hdemg_data((2.5, 7.5))
+    # wash_train_hdemg_data((3.5, 5.5))
+    # wash_test_hdemg_data((3.5, 6.5))
     # wash_test_hdemg_data_by_gesture((2.5, 7.5))
+
+    wash_tsne_hdemg_data((4, 6))
+

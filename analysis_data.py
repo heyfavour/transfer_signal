@@ -26,10 +26,11 @@ def analysis_hdemg_data():
 
 
 def plt_tsne():
-    file = f'./dirty_data/data/S01/hdEMG.mat'
+    file = f'./clean_data/tsne.mat'
     data = sio.loadmat(file)
-    x = data['x']
-    y = data['y_static'].reshape(-1) - 1
+    data = data['data']
+    x = data[:,:-1]
+    y = data[:,-1:].reshape(-1)
     tsne = TSNE(n_components=2, perplexity=30)
     train_x_tsne = tsne.fit_transform(x)
     print(train_x_tsne)

@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="994e9928-a248-4192-b030-2ed9f5469a18" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/clean_data/.keepgit" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dirty_data/.keepgit" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/.keepgit" afterDir="false" />
+    <list default="true" id="994e9928-a248-4192-b030-2ed9f5469a18" name="变更" comment="目录">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysis_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deal_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/deal_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wash_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/wash_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,24 +37,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Mr.Wang/Desktop/hand",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mr.Wang/Desktop/hand&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mr.Wang\Desktop\hand" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.analysis_data">
+  <component name="RunManager" selected="Python.wash_data">
     <configuration name="analysis_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="hand" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,8 +168,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.analysis_data" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.wash_data" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.suit" />
         <item itemvalue="Python.deal_data" />
       </list>
@@ -182,8 +185,17 @@
       <updated>1682252805224</updated>
       <workItem from="1682252806859" duration="18597000" />
       <workItem from="1682341180250" duration="36377000" />
-      <workItem from="1682437710132" duration="8688000" />
+      <workItem from="1682437710132" duration="8783000" />
+      <workItem from="1682503758590" duration="12277000" />
     </task>
+    <task id="LOCAL-00001" summary="目录">
+      <created>1682446525846</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682446525846</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +211,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="目录" />
+    <option name="LAST_COMMIT_MESSAGE" value="目录" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -220,9 +236,9 @@
     <SUITE FILE_PATH="coverage/hand$wash_data__1_.coverage" NAME="wash_data (1) 覆盖结果" MODIFIED="1682259412238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hand$suit.coverage" NAME="suit 覆盖结果" MODIFIED="1682432610504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hand$.coverage" NAME=" 覆盖结果" MODIFIED="1682426135519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hand$wash_data.coverage" NAME="wash_data 覆盖结果" MODIFIED="1682439198601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hand$wash_data.coverage" NAME="wash_data 覆盖结果" MODIFIED="1682516874458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hand$deal_data.coverage" NAME="deal_data 覆盖结果" MODIFIED="1682428748485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hand$main.coverage" NAME="main 覆盖结果" MODIFIED="1682440852372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hand$analysis_data.coverage" NAME="analysis_data 覆盖结果" MODIFIED="1682445474573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hand$main.coverage" NAME="main 覆盖结果" MODIFIED="1682512019521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hand$analysis_data.coverage" NAME="analysis_data 覆盖结果" MODIFIED="1682516981507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

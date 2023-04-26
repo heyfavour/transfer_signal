@@ -56,13 +56,13 @@ if __name__ == '__main__':
     train_loader, valid_loader, test_loader = get_dataloader()
     model = Classifier().to(device)
     criterion = nn.CrossEntropyLoss()
-    optimizer = AdamW(model.parameters(), lr=1e-5)
+    optimizer = AdamW(model.parameters(), lr=5e-4)
     epoch_num = 100
-    name = "S01_S06_transfomer_hdemg"
-    load_model(model,name)
+    name = "S01_S20_transfomer_hdemg"
+    #load_model(model,name)
     for epoch in range(epoch_num):
-        model.train()
         for idx, (gesture, label) in enumerate(train_loader):
+            model.train()
             optimizer.zero_grad()
             gesture, label = gesture.to(device), label.to(device)
             output = model(gesture)
@@ -75,5 +75,4 @@ if __name__ == '__main__':
                 print(f"[TRAIN {epoch:0>3d}/{epoch_num:0>3d}][NUM {idx:0>3d}][accuracy:{accuracy:.4f}][loss {loss.sum().item():.4f}]")
             if idx and idx % 100 == 0: valid(model, valid_loader, device)
             if idx and idx % 100 == 0: test(model, test_loader, device)
-            #if idx and idx % 100 == 0: test_by_gesture(model, device)
         save_model(model,name)
