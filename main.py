@@ -59,7 +59,7 @@ if __name__ == '__main__':
     optimizer = AdamW(model.parameters(), lr=5e-4)
     epoch_num = 100
     name = "S01_S20_transfomer_hdemg"
-    #load_model(model,name)
+    # load_model(model,name)
     for epoch in range(epoch_num):
         for idx, (gesture, label) in enumerate(train_loader):
             model.train()

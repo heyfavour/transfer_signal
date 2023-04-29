@@ -22,7 +22,7 @@ class GestureDataset(Dataset):
     def __getitem__(self, index):
         idx_data = self.data[index]
         # print(idx_data)
-        gesture = torch.FloatTensor(idx_data[:-1]).reshape(20,65)
+        gesture = torch.FloatTensor(idx_data[:-1]).reshape(-1,65)
         label = torch.LongTensor(idx_data[-1:])[0]
         return gesture, label  # [65] [1]
 

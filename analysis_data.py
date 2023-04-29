@@ -5,14 +5,12 @@ import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
-def analysis_dirty_data():
-    file = f'./dirty_data/S01/G01.mat'
+def analysis_dirty_data(file):
     print(f"LOADING FILE {file}")
-    data = sio.loadmat(file)
-    data = data['Data']
-    assert data.shape == (368640, 91)  # 3组6次10s 1s采样 2048
-    for i in range(len(data)):
-        print(data[i][:65])
+    data = sio.loadmat(file)["data"]#108000 66
+    print(np.max(data),np.min(data),np.mean(data),np.std(data))
+    # for i in range(len(data)):
+    #     print(data[i][:65])
 
 def analysis_hdemg_data():
     file = f'./dirty_data/S01/data/hdEMG.mat'
@@ -46,9 +44,17 @@ def plt_tsne():
 
 
 
-
+def analysis_norm():
+    file_list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    for no in file_list:
+        file = f"./dirty_data/norm/S{no:02d}/hdemg_norm.mat"
+        data = sio.loadmat(file)["data"][:,:65]  # 108000 66
+        print(np.max(data), np.min(data), np.mean(data), np.std(data))
 
 
 if __name__ == '__main__':
     #analysis_dirty_data()
+    #analysis_norm()
     plt_tsne()
+
+
