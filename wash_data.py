@@ -117,7 +117,7 @@ def wash_hdemg_data(time_window, out, dirty_list):
             # split_x = x[start_step:end_step, :]
             split_y = y[start_step:end_step, :]
             row = []
-            for i in range(0, 5): row.append(x[start_step + i:end_step + i, :])
+            for i in range(0, 25): row.append(x[start_step + i:end_step + i, :])
             split_x = np.concatenate(row, axis=1)
             row.clear()
             new_x = np.c_[split_x, split_y]
@@ -125,7 +125,7 @@ def wash_hdemg_data(time_window, out, dirty_list):
         # print(np.max(x),np.min(x),np.mean(x),np.std(x))
         # clean_data.append(np.c_[x, y])
     train_data = np.concatenate(clean_data)
-    sio.savemat(f'clean_data/{out}.mat', {'data': train_data})  # Saving .mat File of MYO
+    np.save(f'clean_data/{out}.npy', train_data)  # Saving .mat File of MYO
 
 
 def wash_norm_hdemg_data(time_window, out, dirty_list):
@@ -141,12 +141,12 @@ def wash_norm_hdemg_data(time_window, out, dirty_list):
             end_step = t + int((500 / 10) * end)
             split_y = data[start_step:end_step, -1:] - 1
             row = []
-            for i in range(0, 5): row.append(data[start_step + i:end_step + i, :65])
+            for i in range(0, 25): row.append(data[start_step + i:end_step + i, :65])
             split_x = np.concatenate(row, axis=1)
             new_x = np.c_[split_x, split_y]
             clean_data.append(new_x)
     train_data = np.concatenate(clean_data)
-    sio.savemat(f'clean_data/{out}.mat', {'data': train_data})  # Saving .mat File of MYO
+    np.save(f'clean_data/{out}.npy', train_data)  # Saving .mat File of MYO
 
 
 def wash_tsne_hdemg_data(time_window, prefix, suffix, dirty_list):
@@ -173,18 +173,20 @@ def wash_tsne_hdemg_data(time_window, prefix, suffix, dirty_list):
         # print(np.max(x),np.min(x),np.mean(x),np.std(x))
         # clean_data.append(np.c_[x, y])
     train_data = np.concatenate(clean_data)
-    sio.savemat('clean_data/tsne.mat', {'data': train_data})  # Saving .mat File of MYO
+    np.save('clean_data/tsne.npy', train_data)  # Saving .mat File of MYO
 
 
 if __name__ == '__main__':
     # train_data((1.5, 8.5))
 
-    # wash_hdemg_data((2.5,7.5),"gesture",[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19])
-    # wash_hdemg_data((2.5,7.5),"test",[20])
+    wash_hdemg_data((2.5,7.5),"gesture",[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17])
+    wash_hdemg_data((2.5,7.5),"test18",[18])
+    wash_hdemg_data((2.5,7.5),"test19",[19])
+    wash_hdemg_data((2.5,7.5),"test20",[20])
 
-    # wash_norm_hdemg_data((3.5,6.5),"gesture",[1,2,3,4,5])
-    # wash_norm_hdemg_data((3.5,6.5),"test",[6])
-    wash_norm_hdemg_data((2.5, 7.5), "gesture", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
-    wash_norm_hdemg_data((2.5, 7.5), "test", [20])
+    # wash_norm_hdemg_data((2.5, 7.5), "gesture", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17])
+    # wash_norm_hdemg_data((2.5, 7.5), "test18", [18])
+    # wash_norm_hdemg_data((2.5, 7.5), "test19", [19])
+    # wash_norm_hdemg_data((2.5, 7.5), "test20", [20])
     # wash_tsne_hdemg_data((2.5, 7.5), "./dirty_data/norm", "hdEMG_norm", [20, ])
     # wash_tsne_hdemg_data((2.5, 7.5), "./dirty_data/norm", "hdEMG_norm", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,20])

@@ -9,10 +9,10 @@ from torch.utils.data import DataLoader, random_split
 class GestureDataset(Dataset):
     def __init__(self,file):
         if isinstance(file,str):
-            self.data = sio.loadmat(f"./clean_data/{file}")['data']
+            self.data = np.load(f"./clean_data/{file}")
         elif isinstance(file,list):
             np_list = []
-            for f in file:np_list.append(sio.loadmat(f"./clean_data/{f}")['data'])
+            for f in file:np_list.append(np.load(f"./clean_data/{f}"))
             self.data = np.concatenate(np_list)
             # print(self.data.shape)
 
@@ -27,9 +27,9 @@ class GestureDataset(Dataset):
         return gesture, label  # [65] [1]
 
 def get_dataloader():
-    dataset = GestureDataset("gesture.mat")  #
+    dataset = GestureDataset("gesture.npy")  #
     # print(len(dataset))
-    train_num = int(0.8 * len(dataset))
+    train_num = int(0.9 * len(dataset))
     lengths = [train_num, len(dataset) - train_num]
     trainset, validset = random_split(dataset, lengths)
     # print(len(trainset),len(validset))
@@ -40,7 +40,7 @@ def get_dataloader():
     """
     train_loader = DataLoader(trainset, batch_size=512, shuffle=True, drop_last=True, pin_memory=True)
     valid_loader = DataLoader(validset, batch_size=5000,shuffle=True, drop_last=True, pin_memory=True)
-    testset = GestureDataset("test.mat")
+    testset = GestureDataset("test.npy")
     test_loader = DataLoader(testset, batch_size=5000,shuffle=True, drop_last=True, pin_memory=True)
     return train_loader, valid_loader,test_loader
 
