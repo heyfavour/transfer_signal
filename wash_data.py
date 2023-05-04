@@ -117,7 +117,10 @@ def wash_hdemg_data(time_window, out, dirty_list):
             # split_x = x[start_step:end_step, :]
             split_y = y[start_step:end_step, :]
             row = []
-            for i in range(0, 25): row.append(x[start_step + i:end_step + i, :])
+            for i in range(0, 25):
+                tmp_x = x[start_step + i:end_step + i, :]
+                tmp_x = np.concatenate([tmp_x,np.ones((tmp_x.shape[0],1))*i], axis=1)
+                row.append(tmp_x)
             split_x = np.concatenate(row, axis=1)
             row.clear()
             new_x = np.c_[split_x, split_y]
